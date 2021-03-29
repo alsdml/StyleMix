@@ -1,0 +1,16 @@
+python train.py \
+    --net_type pyramidnet \
+    --dataset cifar100 \
+    --depth 200 \
+    --alpha 240 \
+    --batch_size 128 \
+    --lr 0.25 \
+    --expname PyraNet200 \
+    --epochs 300 \
+    --prob 0.5 \
+    --r 0.7 \
+    --delta 3.0 \
+    --method StyleCutMix_Auto_Gamma \
+    --save_dir /write/your/save/dir \
+    --data_dir /write/your/data/dir \
+    --no-verbose
