@@ -1,6 +1,9 @@
+# StyleMix: Separating Content and Style for Enhanced Data Augmentation (CVPR 2021)
+
 This code is based on the implementations for CutMix(CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features), Puzzle Mix(Puzzle Mix: Exploiting Saliency and Local Statistics for Optimal Mixup), AdaIN(Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization)
 
 ## Usage
+
 1) train.py : Code to train the model
 2) train.sh : Script to run train.py
 3) test.py : Code to check CIFAR-100 and CIFAR-10 classification performance (if fgsm option is set to False) or experiment with FGSM Attack (if fgsm option is set to True) in Pyramid200 model.
