@@ -211,26 +211,6 @@ test.sh :
 ```
 (You can change eps to 1, 2, 4)
 
-## make StyleDistance Matrix
-
-Modify the contents of makeStyleDistanceMatrix.sh according to each situation and run it.
-
-1. CIFAR-100 (make styleDistanceMatrix100.pt)
-```
-makeStyleDistanceMatrix.sh :
-  python makeStyleDistanceMatrix.py \
-    --dataset cifar100 \
-    --batch_size 256 \
-    --data_dir /set/your/data/dir
-```
-2. CIFAR-10 (make styleDistanceMatrix10.pt)
-```
-makeStyleDistanceMatrix.sh :
-  python makeStyleDistanceMatrix.py \
-    --dataset cifar10 \
-    --batch_size 256 \
-    --data_dir /set/your/data/dir
-```
 ## Acknowledgments
 
 This code is based on the implementations for [CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features](https://github.com/clovaai/CutMix-PyTorch), [Puzzle Mix: Exploiting Saliency and Local Statistics for Optimal Mixup](https://github.com/snu-mllab/PuzzleMix), and [Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization](https://github.com/naoto0804/pytorch-AdaIN).
