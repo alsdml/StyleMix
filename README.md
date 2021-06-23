@@ -1,6 +1,21 @@
 # StyleMix: Separating Content and Style for Enhanced Data Augmentation (CVPR 2021)
 
-This code is based on the implementations for CutMix(CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features), Puzzle Mix(Puzzle Mix: Exploiting Saliency and Local Statistics for Optimal Mixup), AdaIN(Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization)
+This repository contains the official PyTorch implementation for our CVPR 2021 paper.
+- Minui Hong*, Jinwoo Choi* and Gunhee Kim. StyleMix: Separating Content and Style for Enhanced Data Augmentation. In CVPR, 2021. (* equal contribution)
+
+[[paper]](https://openaccess.thecvf.com/content/CVPR2021/papers/Hong_StyleMix_Separating_Content_and_Style_for_Enhanced_Data_Augmentation_CVPR_2021_paper.pdf)[[supp]](https://openaccess.thecvf.com/content/CVPR2021/supplemental/Hong_StyleMix_Separating_Content_CVPR_2021_supplemental.pdf)
+
+## Reference
+
+If you cite this paper, please refer to the following:
+```bibtex
+@InProceedings{hong2021stylemix,
+    author    = {Minui Hong and Jinwoo Choi and Gunhee Kim},
+    title     = {StyleMix: Separating Content and Style for Enhanced Data Augmentation},
+    booktitle = {CVPR},
+    year      = {2021}
+}
+```
 
 ## Usage
 
@@ -17,7 +32,7 @@ This code is based on the implementations for CutMix(CutMix: Regularization Stra
 Modify the contents of train.sh according to each situation and run it.
 
 1. StyleCutMix_Auto_Gamma + CIFAR-100
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar100 \
@@ -34,9 +49,9 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 2. StyleCutMix_Auto_Gamma + CIFAR-10
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar10 \
@@ -53,9 +68,9 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 3. StyleCutMix + CIFAR-100
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar100 \
@@ -72,9 +87,9 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 4. StyleCutMix + CIFAR-10
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar10 \
@@ -91,9 +106,9 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 5. StyleMix + CIFAR-100
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar100 \
@@ -110,9 +125,9 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 6. StyleMix + CIFAR-10
-
+```
 python train.py \
     --net_type pyramidnet \
     --dataset cifar10 \
@@ -129,13 +144,13 @@ python train.py \
     --save_dir /set/your/save/dir \
     --data_dir /set/your/data/dir \
     --no-verbose
-
+```
 ## Test classification performance
 
 Modify the contents of test.sh according to each situation and run it.
 
 1. CIFAR-10
-
+```
 test.sh :
   python test.py \
     --net_type pyramidnet \
@@ -146,9 +161,9 @@ test.sh :
     --fgsm False \
     --data_dir /set/your/data/dir \
     --pretrained /set/pretrained/model/dir
-
+```
 2. CIFAR-100
-
+```
 test.sh :
   python test.py \
     --net_type pyramidnet \
@@ -159,13 +174,13 @@ test.sh :
     --fgsm False \
     --data_dir /set/your/data/dir \
     --pretrained /set/pretrained/model/dir
-
+```
 ## Test FGSM Attack
 
 Modify the contents of test.sh according to each situation and run it.
 
 1. FGSM Attack on CIFAR-10
-
+```
 test.sh :
   python test.py \
     --net_type pyramidnet \
@@ -177,11 +192,11 @@ test.sh :
     --eps 1 \
     --data_dir /set/your/data/dir \
     --pretrained /set/pretrained/model/dir
-
+```
 (You can change eps to 1, 2, 4)
 
 2. FGSM Attack on CIFAR-100
-
+```
 test.sh :
   python test.py \
     --net_type pyramidnet \
@@ -193,7 +208,7 @@ test.sh :
     --eps 1 \
     --data_dir /set/your/data/dir \
     --pretrained /set/pretrained/model/dir
-
+```
 (You can change eps to 1, 2, 4)
 
 ## make StyleDistance Matrix
@@ -201,18 +216,21 @@ test.sh :
 Modify the contents of makeStyleDistanceMatrix.sh according to each situation and run it.
 
 1. CIFAR-100 (make styleDistanceMatrix100.pt)
-
+```
 makeStyleDistanceMatrix.sh :
   python makeStyleDistanceMatrix.py \
     --dataset cifar100 \
     --batch_size 256 \
     --data_dir /set/your/data/dir
-
+```
 2. CIFAR-10 (make styleDistanceMatrix10.pt)
-
+```
 makeStyleDistanceMatrix.sh :
   python makeStyleDistanceMatrix.py \
     --dataset cifar10 \
     --batch_size 256 \
     --data_dir /set/your/data/dir
+```
+## Acknowledgments
 
+This code is based on the implementations for [CutMix: Regularization Strategy to Train Strong Classifiers with Localizable Features](https://github.com/clovaai/CutMix-PyTorch), [Puzzle Mix: Exploiting Saliency and Local Statistics for Optimal Mixup](https://github.com/snu-mllab/PuzzleMix), and [Arbitrary Style Transfer in Real-time with Adaptive Instance Normalization](https://github.com/naoto0804/pytorch-AdaIN).
